@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 function Sidebar() {
@@ -104,9 +105,11 @@ export default function Home() {
           {imagePreview && (
             <div className="mt-4">
               <h2 className="text-lg font-semibold">Image Preview:</h2>
-              <img
+              <Image
                 src={imagePreview}
                 alt="Uploaded Preview"
+                width={500}
+                height={500}
                 className="mt-2 w-full max-h-64 object-contain"
               />
             </div>
