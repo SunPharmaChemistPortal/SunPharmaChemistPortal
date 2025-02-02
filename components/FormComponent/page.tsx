@@ -3,16 +3,17 @@ import React from 'react'
 import { useState } from 'react';
 
 export default function FormComponent({ formData }: { formData: Record<string, any> | null }) {
+    
     if (!formData) return <div>Please upload an image to display form data.</div>;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
 
         // Update the formData state dynamically
-        setFormData(prevData => ({
-          ...prevData,
-          [name]: value,
-        }));
+        // setFormData(prevData => ({
+        //   ...prevData,
+        //   [name]: value,
+        // }));
     };
   
     const handleSubmit = async (e: React.FormEvent) => {
