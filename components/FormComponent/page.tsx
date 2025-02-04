@@ -48,20 +48,46 @@ export default function FormComponent({ formData }: { formData: Record<string, a
                 {/* Dropdown for GST and DL Numbers */}
                 {(key === 'gst_numbers' || key === 'dl_numbers') &&
                 Array.isArray(value) ? (
-                <select
-                    id={key}
-                    name={key}
-                    value={formData[key] || ''}
-                    onChange={handleChange}
-                    // multiple={true}
-                    className="w-full border px-3 py-2 rounded  text-gray-700"
-                >
-                    {value.map((option: string) => (
-                    <option key={option} value={option}>
-                        {option}
-                    </option>
-                    ))}
-                </select>
+                    <div>
+                        <select
+                            id={key}
+                            name={key}
+                            value={formData[key] || ''}
+                            onChange={handleChange}
+                            // multiple={true}
+                            className="w-full border px-3 py-2 rounded  text-gray-700"
+                        >
+                            {value.map((option: string) => (
+                            <option key={option} value={option}>
+                                {option}
+                            </option>
+                            ))}
+                        </select>
+                        <input
+                            type="text"
+                            id={key}
+                            name={key}
+                            value={formData[key] || ''}
+                            className="w-full border px-3 py-2 rounded  text-gray-700"
+                        />
+                        <select
+                            id={key}
+                            name={key}
+                            value={formData[key] || ''}
+                            onChange={handleChange}
+                            // multiple={true}
+                            className="w-full border px-3 py-2 rounded  text-gray-700">
+                            <option key={key} value="Remarks">
+                                Remark 1
+                            </option>
+                            <option key={key} value="Remarks">
+                                Remark 2
+                            </option>
+                            <option key={key} value="Remarks">
+                                Remark 3
+                            </option>
+                        </select>
+                    </div>
                 ) : (
                 <input
                     type="text"
